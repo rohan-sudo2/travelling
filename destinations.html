@@ -1,251 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanderlust</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1499678329028-101435549a4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 90vh;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderlust</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1499678329028-101435549a4e');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+
+/* Premium card hover */
+.destination-card {
+    transition: all 0.4s ease;
+}
+.destination-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+.destination-card img {
+    transition: transform 0.5s ease;
+}
+.destination-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Glass navbar effect */
+nav {
+    backdrop-filter: blur(10px);
+}
+</style>
 </head>
 
-<body class="font-sans bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-plane-departure text-blue-500 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold text-blue-600">Wanderlust</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="destinations.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Destinations</a>
-                    <a href="packages.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Packages</a>
-                    <a href="testimonials.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Testimonials</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contact</a>
-                    <a href="booking.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                        Book Now
-                    </a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body class="bg-gray-50 font-sans">
 
-     <!--  Destinations -->
-    <section id="destinations" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Destinations</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Explore our handpicked selection of the world's most captivating destinations.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Destination 1 -->
-                <div class="destination-card relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bali, Indonesia" class="w-full h-64 object-cover">
-                    <div class="destination-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Bali, Indonesia</h3>
-                        <p class="text-gray-200 mb-4">The Island of Gods with stunning beaches and rich culture.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ml-2 text-white">4.8</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Explore
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Destination 2 -->
-                <div class="destination-card relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Santorini, Greece" class="w-full h-64 object-cover">
-                    <div class="destination-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Santorini, Greece</h3>
-                        <p class="text-gray-200 mb-4">Whitewashed buildings with blue domes overlooking the Aegean Sea.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ml-2 text-white">5.0</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Explore
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Destination 3 -->
-                <div class="destination-card relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://i0.wp.com/www.touristjapan.com/wp-content/uploads/2025/01/map-of-kyoto-japan-travel.jpg?resize=1024%2C683&ssl=1">
-                    <div class="destination-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Kyoto, Japan</h3>
-                        <p class="text-gray-200 mb-4">Ancient temples, traditional tea houses, and cherry blossoms.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2 text-white">4.0</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Explore
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                    <!-- Destination 4 -->
-                <div class="destination-card relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bali, Indonesia" class="w-full h-64 object-cover">
-                    <div class="destination-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Bali, Indonesia</h3>
-                        <p class="text-gray-200 mb-4">The Island of Gods with stunning beaches and rich culture.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ml-2 text-white">4.8</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Explore
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Destination 5 -->
-                <div class="destination-card relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Santorini, Greece" class="w-full h-64 object-cover">
-                    <div class="destination-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Santorini, Greece</h3>
-                        <p class="text-gray-200 mb-4">Whitewashed buildings with blue domes overlooking the Aegean Sea.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ml-2 text-white">5.0</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Explore
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Destination 6 -->
-                <div class="destination-card relative overflow-hidden rounded-xl shadow-lg">
-                    <img src="https://i0.wp.com/www.touristjapan.com/wp-content/uploads/2025/01/map-of-kyoto-japan-travel.jpg?resize=1024%2C683&ssl=1">
-                    <div class="destination-overlay absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Kyoto, Japan</h3>
-                        <p class="text-gray-200 mb-4">Ancient temples, traditional tea houses, and cherry blossoms.</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2 text-white">4.0</span>
-                            </div>
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">
-                                Explore
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- NAVBAR -->
+<nav class="bg-white/80 shadow sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 flex justify-between h-16 items-center">
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Wanderlust</h3>
-                    <p class="text-gray-400 mb-4">Making travel dreams come true since 2010.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+<div class="flex items-center space-x-2">
+<i class="fas fa-plane-departure text-blue-500 text-2xl"></i>
+<span class="text-xl font-bold text-blue-600">Wanderlust</span>
+</div>
 
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Explore</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Destinations</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Travel Guides</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Travel Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Special Offers</a></li>
-                    </ul>
-                </div>
+<div class="hidden md:flex space-x-6 items-center">
+<a href="#" class="hover:text-blue-600">Home</a>
+<a href="#" class="hover:text-blue-600">Destinations</a>
+<a href="#" class="hover:text-blue-600">Packages</a>
+<a href="#" class="hover:text-blue-600">Contact</a>
 
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
+<button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+Book Now
+</button>
+</div>
 
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Support</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Booking Help</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Cancellation Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
+<button id="menuBtn" class="md:hidden text-xl">
+<i class="fas fa-bars"></i>
+</button>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Wanderlust. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-white px-4 pb-4">
+<a href="#" class="block py-2">Home</a>
+<a href="#" class="block py-2">Destinations</a>
+<a href="#" class="block py-2">Packages</a>
+<a href="#" class="block py-2">Contact</a>
+</div>
+</nav>
+
+<!-- DESTINATIONS -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4">
+
+<h2 class="text-4xl font-bold text-center mb-4">Destinations</h2>
+<p class="text-gray-500 text-center mb-12">Explore the world with us</p>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- CARD TEMPLATE -->
+<div class="destination-card rounded-xl overflow-hidden shadow-lg relative">
+<img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25" class="h-64 w-full object-cover">
+
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="text-white text-xl font-bold">Bali, Indonesia</h3>
+<p class="text-gray-300 text-sm mb-3">Island of Gods</p>
+
+<div class="flex justify-between items-center">
+<span class="text-yellow-400">★★★★☆</span>
+<button class="bg-blue-600 px-3 py-1 rounded text-white text-sm hover:bg-blue-700">
+Explore
+</button>
+</div>
+</div>
+</div>
+
+<div class="destination-card rounded-xl overflow-hidden shadow-lg relative">
+<img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be" class="h-64 w-full object-cover">
+
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="text-white text-xl font-bold">Santorini, Greece</h3>
+<p class="text-gray-300 text-sm mb-3">Iconic blue domes</p>
+
+<div class="flex justify-between items-center">
+<span class="text-yellow-400">★★★★★</span>
+<button class="bg-blue-600 px-3 py-1 rounded text-white text-sm hover:bg-blue-700">
+Explore
+</button>
+</div>
+</div>
+</div>
+
+<div class="destination-card rounded-xl overflow-hidden shadow-lg relative">
+<img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9" class="h-64 w-full object-cover">
+
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="text-white text-xl font-bold">Kyoto, Japan</h3>
+<p class="text-gray-300 text-sm mb-3">Tradition meets beauty</p>
+
+<div class="flex justify-between items-center">
+<span class="text-yellow-400">★★★★☆</span>
+<button class="bg-blue-600 px-3 py-1 rounded text-white text-sm hover:bg-blue-700">
+Explore
+</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-10 mt-10">
+<div class="max-w-7xl mx-auto px-4 text-center">
+
+<h3 class="text-white text-lg font-bold mb-2">Wanderlust</h3>
+<p class="mb-4">Travel made simple & beautiful.</p>
+
+<div class="flex justify-center space-x-6 text-xl mb-4">
+<i class="fab fa-facebook hover:text-white"></i>
+<i class="fab fa-twitter hover:text-white"></i>
+<i class="fab fa-instagram hover:text-white"></i>
+</div>
+
+<p class="text-sm">© 2026 Wanderlust</p>
+
+</div>
+</footer>
+
+<script>
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+
+btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+});
+</script>
+
 </body>
-
 </html>
